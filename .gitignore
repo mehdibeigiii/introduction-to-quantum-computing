@@ -1,0 +1,48 @@
+# Local synced reference material; it is not canonical repository content.
+sources/
+AGENTS.md
+
+# Python environments and build/cache artifacts
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Jupyter and IPython state
+.ipynb_checkpoints/
+.ipython/
+
+# Local provider credentials, configuration, and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+qiskit-ibm-runtime.json
+ibm-quantum*.json
+dwave.conf
+dwave.conf.*
+.config/dwave/
+
+# OS, editor, and temporary artifacts
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*.tmp
+*.temp
+*~

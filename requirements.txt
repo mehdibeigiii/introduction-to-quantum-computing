@@ -1,0 +1,26 @@
+# Install into an existing compatible Python environment:
+# python -m pip install --upgrade pip
+# python -m pip install -r requirements.txt
+# python -m jupyter lab
+
+# Notebook interface and core local Qiskit simulation
+jupyterlab==4.6.3
+qiskit==2.5.2
+qiskit-aer==0.17.2
+numpy==2.5.2
+matplotlib==3.11.1
+
+# Modern algorithm and chemistry notebooks
+qiskit-algorithms==0.4.0
+qiskit-nature==0.8.0
+
+# Quantum machine-learning notebooks
+qiskit-machine-learning==0.9.1
+scipy==1.18.1
+scikit-learn==1.9.0
+torch==2.13.0
+
+# Optional provider-backed sections in the relevant notebooks
+qiskit-ibm-runtime==0.49.0
+dimod==0.12.22
+dwave-system==1.35.0
