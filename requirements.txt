@@ -1,26 +1,57 @@
-# Install into an existing compatible Python environment:
-# python -m pip install --upgrade pip
+# Setup and dependencies
+#
+# Activate an existing compatible Python environment before installing. The
+# intended starting point is Python 3.13; a complete clean-environment execution
+# of this collection remains to be recorded in docs/reproducibility.md.
+# Run these commands from the repository root:
+#
 # python -m pip install -r requirements.txt
-# python -m jupyter lab
+# python -m pip check
+# python -m jupyterlab
+#
+# Select the notebook kernel belonging to the same Python environment. In a
+# notebook, `import sys; print(sys.executable)` shows the interpreter in use.
+# Start with notebooks/01-foundations-and-information/hello-quantum-world.ipynb.
+#
+# Qiskit defines circuits and states. Samplers return measurement samples;
+# estimators evaluate observables. Aer provides local simulation. Qiskit
+# Algorithms, Nature, and Machine Learning support the later examples.
+# PySCF supplies the electronic-structure calculation used by molecular VQE;
+# scikit-learn provides datasets and preprocessing, and PyTorch trains the QGAN.
+#
+# These direct package pins retain the supplied modernization baseline, with
+# explicit PySCF and circuit-drawing dependencies added. They are not a complete
+# lock of transitive packages. Record the resolved environment when reporting a
+# result. PySCF installation is platform-dependent; consult its documentation
+# if a compatible wheel is unavailable. An installation is not a notebook audit.
+#
+# https://quantum.cloud.ibm.com/docs/en/guides/install-qiskit
+# https://qiskit-community.github.io/qiskit-nature/apidocs/qiskit_nature.second_q.drivers.pyscfd.html
 
-# Notebook interface and core local Qiskit simulation
+# JupyterLab opens the notebooks; pylatexenc supports circuit drawings.
 jupyterlab==4.6.3
+pylatexenc==2.11
 qiskit==2.5.2
 qiskit-aer==0.17.2
 numpy==2.5.2
 matplotlib==3.11.1
 
-# Modern algorithm and chemistry notebooks
+# Algorithms and molecular electronic structure.
 qiskit-algorithms==0.4.0
 qiskit-nature==0.8.0
+pyscf==2.14.0
 
-# Quantum machine-learning notebooks
+# Classification, preprocessing, and generative learning.
 qiskit-machine-learning==0.9.1
 scipy==1.18.1
 scikit-learn==1.9.0
 torch==2.13.0
 
-# Optional provider-backed sections in the relevant notebooks
+# These libraries are also used by local examples and backend snapshots.
+# Installing them does not require a provider account. Keep RUN_IBM_HARDWARE
+# and RUN_DWAVE_HARDWARE False for local work. Configure credentials locally
+# with the provider only when deliberately using hardware; never store them in
+# this file or a notebook.
 qiskit-ibm-runtime==0.49.0
 dimod==0.12.22
 dwave-system==1.35.0
