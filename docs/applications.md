@@ -91,8 +91,8 @@ A binary variable $T_i$ records whether candidate triplet $i$ is selected, with
 an objective of the form
 
 $$
-C(T) = \sum_i a_i T_i + \sum_{i<j} b_{ij}T_iT_j,
-\qquad T_i \in \{0,1\}.
+C(T) = \sum_i a_i T_i + \sum_{i \lt j} b_{ij} T_i T_j,
+\qquad T_i \in \{0, 1\}.
 $$
 
 The coefficients represent candidate quality and compatibility, rewarding
