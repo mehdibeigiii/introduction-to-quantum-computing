@@ -65,9 +65,9 @@ C(x)
 =
 \sum_i a_i x_i
 +
-\sum_{i<j}b_{ij}x_i x_j,
+\sum_{i \lt j} b_{ij}x_i x_j,
 \qquad
-x_i\in\{0,1\}.
+x_i \in \{0,1\}.
 ```
 
 The coefficients describe the value of selecting individual variables and the rewards or penalties associated with selecting pairs. After mapping binary variables to spin variables, the same problem can be represented by an Ising Hamiltonian. MaxCut is a useful example because the quality of a graph partition can be encoded directly as an energy.
