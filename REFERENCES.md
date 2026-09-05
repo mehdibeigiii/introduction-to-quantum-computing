@@ -2,6 +2,7 @@
 
 
 [CERN Indico course page](https://indico.cern.ch/event/970903/) contains the seven lectures, original notebooks, slides, exercises, recordings, and supporting resources. 
+
 [final cumulative lecture deck](https://indico.cern.ch/event/970909/attachments/2165159/3654057/PIQC%20Lecture%207.pdf) contains the complete progression of the course.
 
 ## Course recordings
