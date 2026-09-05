@@ -59,11 +59,8 @@ Real-time evolution in quantum field theories is difficult for many classical nu
 
 A complementary proposal by [Bauer, Freytsis, and Nachman](https://arxiv.org/abs/2102.05044) uses effective field theory to separate perturbatively accessible high-energy dynamics from lower-energy dynamics assigned to a quantum computer. Their demonstration evaluates Wilson-line observables in a scalar field theory using simulation and IBM quantum hardware. These studies move closer to calculating quantum dynamics connected with collider theory, although both use simplified models rather than full quantum chromodynamics.
 
-## Brief external research outlook
 
 Beyond the applications discussed in the lecture, [Bauer and collaborators](https://arxiv.org/abs/1904.03196) developed a quantum parton-shower algorithm for a simplified field theory. It preserves quantum information during particle branching and studies interference effects that are difficult to represent in a classical probabilistic shower.
-
-[Pérez-Salinas and collaborators](https://arxiv.org/abs/2011.13934) used variational circuits to represent proton parton distribution functions. Other external studies include [real-time simulation of the Schwinger model](https://arxiv.org/abs/1605.04570) and [effective-field-theory calculations for collider observables](https://arxiv.org/abs/2102.05044). These studies connect quantum algorithms more directly to phenomenological calculations, but they remain small or simplified demonstrations.
 
 ## Interpretation and repository status
 
