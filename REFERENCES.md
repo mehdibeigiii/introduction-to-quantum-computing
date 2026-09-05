@@ -19,8 +19,6 @@
 
 ## Documentation used to modernize the notebooks
 
-[Qiskit 2.0 migration guide](https://quantum.cloud.ibm.com/docs/en/guides/qiskit-2.0) 
-
 | Modernization area | Documentation used |
 | --- | --- |
 | Replacing local `execute`, `QuantumInstance`, and old sampler workflows | IBM’s [exact simulation with Qiskit SDK primitives](https://quantum.cloud.ibm.com/docs/en/guides/simulate-with-qiskit-sdk-primitives), [`StatevectorSampler`](https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.primitives.StatevectorSampler), and [`StatevectorEstimator`](https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.primitives.StatevectorEstimator) documentation |
