@@ -57,8 +57,6 @@ Wen Guan, Gabriel Perdue, Arthur Pesah, Maria Schuld, Koji Terashi, Sofia Vallec
 
 Alex Mott and collaborators, [*Solving a Higgs Optimization Problem with Quantum Annealing for Machine Learning*](https://www.nature.com/articles/nature24047), *Nature* 550, 375–379, 2017. This is the source for the Higgs-classification and quantum-annealing example.
 
-Frédéric Bapst and collaborators, [*A Pattern Recognition Algorithm for Quantum Annealers*](https://link.springer.com/article/10.1007/s41781-019-0032-5), *Computing and Software for Big Science* 4, 1, 2020. This is the source for the particle-track reconstruction example.
-
 Andrew C. Y. Li, Alexandru Macridin, and Panagiotis Spentzouris, [*Simulating the Quantum Rabi Model with the Variational Quantum Eigensolver*](https://lss.fnal.gov/archive/2019/slides/fermilab-slides-19-003-qis.pdf), Fermilab, 2019. This supports the Rabi-model and VQE discussion.
 
 Koji Terashi and collaborators, [*Event Classification with Quantum Machine Learning in High-Energy Physics*](https://arxiv.org/abs/2002.09935), 2020. This is the source for the variational classification of supersymmetric signal and Standard Model background.
@@ -71,14 +69,10 @@ Su Yeon Chang and collaborators, [*Dual-Parameterized Quantum Circuit GAN Model 
 
 Christian W. Bauer, Wibe A. de Jong, Benjamin Nachman, and Davide Provasoli, [*A Quantum Algorithm for High Energy Physics Simulations*](https://arxiv.org/abs/1904.03196), 2019. This introduces a quantum final-state parton shower in a simplified field theory.
 
-Adrián Pérez-Salinas, Juan Cruz-Martinez, Abdulla A. Alhajri, and Stefano Carrazza, [*Determining the Proton Content with a Quantum Computer*](https://arxiv.org/abs/2011.13934), 2020. This studies variational quantum-circuit representations of parton distribution functions.
-
 E. A. Martinez and collaborators, [*Real-Time Dynamics of Lattice Gauge Theories with a Few-Qubit Quantum Computer*](https://arxiv.org/abs/1605.04570), *Nature* 534, 516–519, 2016. This is the source for the Schwinger-model example.
 
 Christian W. Bauer, Marat Freytsis, and Benjamin Nachman, [*Simulating Collider Physics on Quantum Computers Using Effective Field Theories*](https://arxiv.org/abs/2102.05044), 2021. This connects quantum simulation with low-energy effective-field-theory dynamics and Wilson-line observables.
 
 Kübra Yeter-Aydeniz, Shikha Bangar, George Siopsis, and Raphael C. Pooser, [*Collective Neutrino Oscillations on a Quantum Computer*](https://arxiv.org/abs/2104.03273), 2021. This supports the discussion of small quantum simulations of interacting neutrino systems.
 
-[Project home](README.md) · [Course map](docs/course-map.md) · [Course overview](docs/overview.md) · [Applications](docs/applications.md)
-
-[Project home](README.md)
+[Project home](README.md) · [Overview](docs/overview.md) · [Applications](docs/applications.md)
