@@ -1,8 +1,8 @@
 # References and acknowledgments
 
-This repository is based on Elías F. Combarro’s CERN course, *A Practical Introduction to Quantum Computing: From Qubits to Quantum Machine Learning and Beyond*.
+
 [CERN Indico course page](https://indico.cern.ch/event/970903/) contains the seven lectures, original notebooks, slides, exercises, recordings, and supporting resources. 
-The [final cumulative lecture deck](https://indico.cern.ch/event/970909/attachments/2165159/3654057/PIQC%20Lecture%207.pdf) contains the complete progression of the course.
+[final cumulative lecture deck](https://indico.cern.ch/event/970909/attachments/2165159/3654057/PIQC%20Lecture%207.pdf) contains the complete progression of the course.
 
 ## Course recordings
 
