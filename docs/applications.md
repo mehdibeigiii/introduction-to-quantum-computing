@@ -67,6 +67,12 @@ Page 210 presents early QGAN work by Su Yeon Chang and Sofia Vallecorsa. The rel
 
 The local [quantum-generative-model notebook](../notebooks/04-quantum-machine-learning/quantum-generative-model.ipynb) demonstrates adversarial training with a small binomial distribution. It explains the method but is not a calorimeter simulator. A complete application would need detector geometry, cell energies, particle conditions, shower profiles, correlations, and comparisons with reference simulation.
 
+## Quantum-field-theory dynamics
+
+Real-time evolution in quantum field theories is difficult for many classical numerical methods. Martinez and collaborators demonstrated a few-qubit trapped-ion simulation of the Schwinger model, a simplified form of quantum electrodynamics in one spatial dimension. The experiment followed particle-antiparticle production, vacuum persistence, and entanglement during real-time evolution.
+
+A complementary proposal by Bauer, Freytsis, and Nachman uses effective field theory to separate perturbatively accessible high-energy dynamics from lower-energy dynamics assigned to a quantum computer. Their demonstration evaluates Wilson-line observables in a scalar field theory using simulation and IBM quantum hardware. These studies move closer to calculating quantum dynamics connected with collider theory, although both use simplified models rather than full quantum chromodynamics.
+
 ## Brief external research outlook
 
 Beyond the applications discussed in the lecture, [Bauer and collaborators](https://arxiv.org/abs/1904.03196) developed a quantum parton-shower algorithm for a simplified field theory. It preserves quantum information during particle branching and studies interference effects that are difficult to represent in a classical probabilistic shower.
