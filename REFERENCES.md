@@ -18,10 +18,10 @@ The [final cumulative lecture deck](https://indico.cern.ch/event/970909/attachme
 
 ## Documentation used to modernize the notebooks
 
-[Qiskit 0.33 release notes](https://quantum.cloud.ibm.com/docs/en/api/qiskit/release-notes/0.33) . 
-The [Qiskit 0.43 release notes](https://quantum.cloud.ibm.com/docs/en/api/qiskit/release-notes/0.43)
 
-The [Qiskit 1.0 feature changes](https://quantum.cloud.ibm.com/docs/en/guides/qiskit-1.0-features) explain the move from V1 primitives to `StatevectorSampler` and `StatevectorEstimator`. 
+[Qiskit 0.33 release notes](https://quantum.cloud.ibm.com/docs/en/api/qiskit/release-notes/0.33)
+[Qiskit 0.43 release notes](https://quantum.cloud.ibm.com/docs/en/api/qiskit/release-notes/0.43)
+[Qiskit 1.0 feature changes](https://quantum.cloud.ibm.com/docs/en/guides/qiskit-1.0-features) explain the move from V1 primitives to `StatevectorSampler` and `StatevectorEstimator`. 
 [Qiskit 2.0 migration guide](https://quantum.cloud.ibm.com/docs/en/guides/qiskit-2.0) 
 
 | Modernization area | Documentation used |
