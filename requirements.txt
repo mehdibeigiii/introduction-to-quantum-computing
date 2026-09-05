@@ -1,8 +1,6 @@
 # Setup and dependencies
 #
-# Activate an existing compatible Python environment before installing. The
 # intended starting point is Python 3.13; a complete clean-environment execution
-# of this collection remains to be recorded in docs/reproducibility.md.
 # Run these commands from the repository root:
 #
 # python -m pip install -r requirements.txt
