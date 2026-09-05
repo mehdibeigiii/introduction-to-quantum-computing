@@ -39,9 +39,9 @@ The [Qiskit 1.0 feature changes](https://quantum.cloud.ibm.com/docs/en/guides/qi
 
 The hardware sections follow IBM’s guidance for [saving account credentials](https://quantum.cloud.ibm.com/docs/en/guides/save-credentials).
 
-## Supporting explanations (partial review)
+## Supporting explanations
 
-[Introduction to Bell States in Qiskit](https://quantumcomputinguk.org/tutorials/introduction-to-bell-states) provides a circuit-level explanation of the four Bell states and their preparation with Hadamard and controlled-NOT gates.
+[Introduction to Bell States in Qiskit](https://quantumcomputinguk.org/tutorials/introduction-to-bell-states)
 
 [Quantum Teleportation](https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/entanglement-in-action/quantum-teleportation) 
 
@@ -51,25 +51,25 @@ The hardware sections follow IBM’s guidance for [saving account credentials](h
 
 [Quirk quantum circuit simulator](https://algassert.com/quirk) 
 
-## Applications and research context
+## Applications and research context (partial review)
 
-[*Quantum Machine Learning in High Energy Physics*](https://arxiv.org/abs/2005.08582),
+[*Quantum Machine Learning in High Energy Physics*](https://arxiv.org/abs/2005.08582)
 
-[*Solving a Higgs Optimization Problem with Quantum Annealing for Machine Learning*](https://www.nature.com/articles/nature24047),
+[*Solving a Higgs Optimization Problem with Quantum Annealing for Machine Learning*](https://www.nature.com/articles/nature24047)
 
-[*Event Classification with Quantum Machine Learning in High-Energy Physics*](https://arxiv.org/abs/2002.09935),
+[*Event Classification with Quantum Machine Learning in High-Energy Physics*](https://arxiv.org/abs/2002.09935)
 
-[*Application of Quantum Machine Learning Using the Quantum Variational Classifier Method to High Energy Physics Analysis at the LHC*](https://arxiv.org/abs/2012.11560),
+[*Application of Quantum Machine Learning Using the Quantum Variational Classifier Method to High Energy Physics Analysis at the LHC*](https://arxiv.org/abs/2012.11560)
 
-[*Quantum Generative Adversarial Networks in a Continuous-Variable Architecture to Simulate High Energy Physics Detectors*](https://arxiv.org/abs/2101.11132),
+[*Quantum Generative Adversarial Networks in a Continuous-Variable Architecture to Simulate High Energy Physics Detectors*](https://arxiv.org/abs/2101.11132)
 
-[*Dual-Parameterized Quantum Circuit GAN Model in High Energy Physics*](https://arxiv.org/abs/2103.15470),
+[*Dual-Parameterized Quantum Circuit GAN Model in High Energy Physics*](https://arxiv.org/abs/2103.15470)
 
-[*A Quantum Algorithm for High Energy Physics Simulations*](https://arxiv.org/abs/1904.03196),
+[*A Quantum Algorithm for High Energy Physics Simulations*](https://arxiv.org/abs/1904.03196)
 
-[*Real-Time Dynamics of Lattice Gauge Theories with a Few-Qubit Quantum Computer*](https://arxiv.org/abs/1605.04570),
+[*Real-Time Dynamics of Lattice Gauge Theories with a Few-Qubit Quantum Computer*](https://arxiv.org/abs/1605.04570)
 
-[*Simulating Collider Physics on Quantum Computers Using Effective Field Theories*](https://arxiv.org/abs/2102.05044),
+[*Simulating Collider Physics on Quantum Computers Using Effective Field Theories*](https://arxiv.org/abs/2102.05044)
 
 
 [Project home](README.md) · [Overview](docs/overview.md) · [Applications](docs/applications.md)
