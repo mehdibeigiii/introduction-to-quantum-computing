@@ -2,7 +2,7 @@
 
 Particle-physics phenomenology connects theoretical models with observable quantities such as event rates, invariant masses, particle momenta, and detector signatures. Quantum computing can contribute to this process through event classification, track reconstruction, detector simulation, optimization, and simulation of physical systems.
 
-The main examples below come from the [final CERN lecture material][course-slides]. Some applications concern the experimental workflow rather than direct phenomenological calculations: classification supports signal extraction, tracking reconstructs collision events, and calorimeter generation simulates detector response.
+Some applications concern the experimental workflow rather than direct phenomenological calculations: classification supports signal extraction, tracking reconstructs collision events, and calorimeter generation simulates detector response.
 
 ## Higgs classification with quantum annealing
 
