@@ -17,12 +17,6 @@
 # PySCF supplies the electronic-structure calculation used by molecular VQE;
 # scikit-learn provides datasets and preprocessing, and PyTorch trains the QGAN.
 #
-# These direct package pins retain the supplied modernization baseline, with
-# explicit PySCF and circuit-drawing dependencies added. They are not a complete
-# lock of transitive packages. Record the resolved environment when reporting a
-# result. PySCF installation is platform-dependent; consult its documentation
-# if a compatible wheel is unavailable. An installation is not a notebook audit.
-#
 # https://quantum.cloud.ibm.com/docs/en/guides/install-qiskit
 # https://qiskit-community.github.io/qiskit-nature/apidocs/qiskit_nature.second_q.drivers.pyscfd.html
 
