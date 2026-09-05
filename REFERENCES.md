@@ -51,16 +51,6 @@ IBM Quantum Learning’s [Introduction to Quantum Machine Learning](https://quan
 
 The lecture material also uses the interactive [Quirk quantum circuit simulator](https://algassert.com/quirk) and provides a separate [BB84 entanglement-attack supplement](https://indico.cern.ch/event/970906/attachments/2151237/3627129/BB84-entanglement.pdf).
 
-## Books recommended by the course
-
-Michael A. Nielsen and Isaac L. Chuang, *Quantum Computation and Quantum Information*, 10th Anniversary Edition, Cambridge University Press, 2011.
-
-Noson S. Yanofsky and Mirco A. Mannucci, *Quantum Computing for Computer Scientists*, Cambridge University Press, 2008.
-
-Maria Schuld and Francesco Petruccione, *Supervised Learning with Quantum Computers*, Springer, 2018.
-
-These books and other suggested material are listed in the course’s [Recommended Books and Resources](https://indico.cern.ch/event/970909/attachments/2165159/3654059/Recommended%20books%20and%20resources.pdf).
-
 ## Applications and research context
 
 Wen Guan, Gabriel Perdue, Arthur Pesah, Maria Schuld, Koji Terashi, Sofia Vallecorsa, and Jean-Roch Vlimant, [*Quantum Machine Learning in High Energy Physics*](https://arxiv.org/abs/2005.08582), 2020. This review provides the general context for the HEP applications discussed in the lecture.
