@@ -55,9 +55,9 @@ The local [quantum-generative-model notebook](../notebooks/04-quantum-machine-le
 
 ## Quantum-field-theory dynamics
 
-Real-time evolution in quantum field theories is difficult for many classical numerical methods. Martinez and collaborators demonstrated a few-qubit trapped-ion simulation of the Schwinger model, a simplified form of quantum electrodynamics in one spatial dimension. The experiment followed particle-antiparticle production, vacuum persistence, and entanglement during real-time evolution.
+Real-time evolution in quantum field theories is difficult for many classical numerical methods. [Martinez and collaborators](https://arxiv.org/abs/1605.04570) demonstrated a few-qubit trapped-ion simulation of the Schwinger model, a simplified form of quantum electrodynamics in one spatial dimension. The experiment followed particle-antiparticle production, vacuum persistence, and entanglement during real-time evolution.
 
-A complementary proposal by Bauer, Freytsis, and Nachman uses effective field theory to separate perturbatively accessible high-energy dynamics from lower-energy dynamics assigned to a quantum computer. Their demonstration evaluates Wilson-line observables in a scalar field theory using simulation and IBM quantum hardware. These studies move closer to calculating quantum dynamics connected with collider theory, although both use simplified models rather than full quantum chromodynamics.
+A complementary proposal by [Bauer, Freytsis, and Nachman](https://arxiv.org/abs/2102.05044) uses effective field theory to separate perturbatively accessible high-energy dynamics from lower-energy dynamics assigned to a quantum computer. Their demonstration evaluates Wilson-line observables in a scalar field theory using simulation and IBM quantum hardware. These studies move closer to calculating quantum dynamics connected with collider theory, although both use simplified models rather than full quantum chromodynamics.
 
 ## Brief external research outlook
 
