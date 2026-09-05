@@ -24,7 +24,7 @@ The study demonstrated that a small HEP classification problem could be expresse
 
 Charged particles leave hits as they pass through detector layers. Track reconstruction determines which hits belong to the same particle. When many collisions occur together, the number of possible hit combinations makes this a difficult optimization problem.
 
-Pages 162–163 present the method studied by [Bapst and collaborators](https://link.springer.com/article/10.1007/s41781-019-0032-5). Candidate triplets of hits are represented by binary variables, and their quality and compatibility are included in a quadratic cost function.
+The lecture present a method studied by [Bapst and collaborators](https://link.springer.com/article/10.1007/s41781-019-0032-5). Candidate triplets of hits are represented by binary variables, and their quality and compatibility are included in a quadratic cost function.
 
 ```math
 C(T)
