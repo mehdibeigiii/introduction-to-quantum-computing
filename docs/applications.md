@@ -1,181 +1,121 @@
 # Applications and phenomenological connections
 
-Particle-physics phenomenology connects models of fundamental interactions with
-observable quantities, such as event rates, invariant masses, and particle
-momentum distributions. The course shows how quantum computing might contribute
-to this work through event classification, track reconstruction, detector
-simulation, and calculations of quantum systems. Reconstruction and detector
-simulation support the comparison between theory and data; they are distinct
-from calculating a scattering process itself.
+Particle-physics phenomenology connects theories of fundamental interactions with measurable quantities such as cross sections, event rates, invariant masses, and momentum distributions. Quantum computing may contribute to this process through physical simulation, event classification, optimization, and generative modelling. Track reconstruction and detector simulation support physics analyses, while calculations of parton distributions, radiation, and field dynamics connect more directly to theoretical predictions.
 
-The examples below follow the [final CERN lecture deck][course-slides], with
-primary references beside the relevant discussion. They are literature case
-studies: this repository does not yet contain a HEP dataset analysis or a
-reproduction of their published results. The modernized notebooks provide the
-computational starting points. Suggested comparisons below describe what a
-future experiment should measure, rather than results already obtained here.
+The first half of this document follows applications presented in the [CERN lecture material][course-slides]. The second half considers related research from external sources. The H₂ [molecular VQE notebook](../notebooks/03-optimization-and-variational-methods/vqe-molecular-energy.ipynb) is the only domain application implemented locally. The other notebooks demonstrate transferable methods, but this repository does not currently reproduce a HEP dataset, detector simulation, or quantum-field-theory calculation.
 
-## Molecular energy as an implemented starting point
+## Applications presented in the course
 
-The [molecular VQE notebook](../notebooks/03-optimization-and-variational-methods/vqe-molecular-energy.ipynb)
-constructs an H₂ electronic-structure problem, maps its fermionic Hamiltonian to
-qubits, and compares variational and exact energies as the internuclear distance
-changes. This is a chemistry application. Its transferable lesson is the
-sequence from a physical Hamiltonian to a qubit representation, a trial state,
-measured expectation values, and a classical optimization. The exact solution
-provides a reference for assessing the approximation within the chosen model.
+### Higgs-event classification with quantum annealing
 
-## Higgs events: classification and physics sensitivity
+The course presents the work of Mott and colleagues on separating the Higgs signal \(gg\rightarrow H\rightarrow\gamma\gamma\) from Standard Model diphoton backgrounds. Their method combines 36 weak classifiers using binary weights and converts the training objective into an Ising optimization problem that can be studied with classical or quantum annealing.
 
-Higgs analyses must distinguish rare signal events from other processes that
-produce similar detector signatures. The annealing example on pages 148–151
-considers gluon-fusion Higgs production followed by decay into two photons,
-$gg \to H \to \gamma\gamma$, against non-Higgs diphoton backgrounds.
-The separate QML examples on pages 189–191 include Higgs production with a
-top-quark pair, $t\bar{t}H$, with $H \to \gamma\gamma$, and the
-$H \to \mu^+\mu^-$ decay channel. The production mode and decay channel must be
-specified when describing a dataset: these examples involve different signals
-and backgrounds.
+The physical value of such a classifier depends on the number of signal events it retains and the background events it rejects. For a specified production and decay channel, the expected selected signal yield is
 
-The physical value of a classifier lies in the signal it retains and the
-background it rejects. For a specified production and decay channel, the
-expected selected signal yield can be written as
+```math
+N_s
+=
+\mathcal{L}\,\sigma\,\mathrm{BR}\,\epsilon_s,
+```
 
-$$
-N_s = \mathcal{L}\,\sigma\,\mathrm{BR}\,\epsilon_s,
-$$
+where \(\mathcal{L}\) is the integrated luminosity, \(\sigma\) is the production cross section, \(\mathrm{BR}\) is the branching fraction, and \(\epsilon_s\) is the combined acceptance and selection efficiency. A credible comparison should report the ROC curve and signal efficiency at a stated background efficiency, followed by a statistical analysis of the resulting physics sensitivity.
 
-where $\mathcal{L}$ is integrated luminosity, $\sigma$ the production cross
-section, $\mathrm{BR}$ the branching fraction, and $\epsilon_s$ the combined
-acceptance and selection efficiency. Changing a classifier threshold changes
-the selected signal and background yields. A useful comparison should therefore
-report signal efficiency at a specified background efficiency, alongside the
-receiver operating characteristic (ROC) curve. A claim about improved physics
-sensitivity would additionally require a statistical analysis with the relevant
-background and systematic uncertainties.
+[Mott et al., *Solving a Higgs optimization problem with quantum annealing for machine learning*](https://www.nature.com/articles/nature24047), reported performance comparable to the selected classical methods under the tested conditions. The study did not establish a general quantum speedup. The local [MaxCut notebook](../notebooks/03-optimization-and-variational-methods/maxcut.ipynb) demonstrates the required Ising and QUBO ideas, but it does not implement the Higgs classifier.
 
-In [Mott and colleagues' annealing study (2017)](https://www.nature.com/articles/nature24047),
-simple classifiers built from photon kinematics are combined using binary
-weights. Training becomes an Ising optimization problem. The authors report
-classification performance comparable to the classical methods they studied;
-this does not establish a general quantum speedup. The
-[MaxCut notebook](../notebooks/03-optimization-and-variational-methods/maxcut.ipynb)
-provides the relevant experience with Ising models and comparisons between
-optimization methods, although its graph objective is different from classifier
-training.
+### Particle-track reconstruction
 
-Quantum kernels instead encode event features into quantum states and use their
-overlaps in a classical support vector machine. A
-[subsequent study by Wu and colleagues (2021)](https://arxiv.org/abs/2104.05059)
-applies this approach to $t\bar{t}H$ classification and reports performance
-comparable to its classical baselines. This paper develops the research
-direction beyond the 2020 course. The local
-[quantum-kernel](../notebooks/04-quantum-machine-learning/quantum-kernels.ipynb)
-and [variational-classifier](../notebooks/04-quantum-machine-learning/variational-classifier.ipynb)
-notebooks introduce two distinct circuit-based classification approaches using
-instructional data, including reduced breast-cancer data. Adapting either to
-HEP would require a documented event sample, physically motivated features, and
-a held-out comparison with classical classifiers. Their existing preprocessing
-leakage must first be corrected as described in
-[reproducibility.md](reproducibility.md).
+Charged particles leave hits while passing through detector layers. Track reconstruction determines which hits were produced by the same particle so that its trajectory, momentum, and production vertex can be estimated. The course describes selecting compatible triplets of hits with a QUBO of the form
 
-## Particle tracking as binary optimization
+```math
+C(T)
+=
+\sum_i a_iT_i
++
+\sum_{i\lt j}b_{ij}T_iT_j,
+\qquad
+T_i\in\{0,1\}.
+```
 
-Charged particles leave hits as they pass through detector layers. Reconstructing
-a track requires deciding which hits belong together; many simultaneous
-collisions create numerous plausible combinations. Correct assignments support
-momentum and vertex measurements, which subsequently enter physics analyses.
+The coefficients describe the quality of individual triplets and the compatibility between pairs of triplets. [Bapst et al., *A Pattern Recognition Algorithm for Quantum Annealers*](https://link.springer.com/article/10.1007/s41781-019-0032-5), tested this formulation with classical and quantum annealing. They found that increasing track density reduced the purity of the selected segments, while complete timing and HL-LHC scaling remained unresolved.
 
-Pages 162–163 describe an approach that selects compatible triplets of hits.
-A binary variable $T_i$ records whether candidate triplet $i$ is selected, with
-an objective of the form
+The course mentioned a future QAOA implementation on Rigetti hardware; it did not present a completed QAOA tracking result. The local [MaxCut](../notebooks/03-optimization-and-variational-methods/maxcut.ipynb) and [QAOA](../notebooks/03-optimization-and-variational-methods/qaoa.ipynb) notebooks provide the optimization background. A real tracking study would also require detector hits, candidate construction, post-processing, and evaluation through efficiency, purity, duplicate rates, momentum resolution, TrackML score, and total processing time.
 
-$$
-C(T) = \sum_i a_i T_i + \sum_{i \lt j} b_{ij} T_i T_j,
-\qquad T_i \in \{0, 1\}.
-$$
+### VQE and the Rabi model
 
-The coefficients represent candidate quality and compatibility, rewarding
-consistent combinations and penalizing conflicts. This quadratic unconstrained
-binary optimization (QUBO) can be mapped to an Ising problem.
-[Bapst and colleagues](https://link.springer.com/article/10.1007/s41781-019-0032-5)
-study the annealing formulation and find that increasing track density reduces
-the purity of the selected segments. Their paper also leaves overall timing and
-scaling to further study. The course describes applying QAOA to this formulation
-as planned work; it does not present a completed QAOA tracking benchmark.
+The course uses the Rabi model to show how a small physical system can be encoded for variational simulation. The model contains a two-level system coupled to a photon mode. After restricting the photon occupation to zero through three, two qubits encode the photon states and one qubit represents the two-level system.
 
-The [MaxCut](../notebooks/03-optimization-and-variational-methods/maxcut.ipynb)
-and [QAOA](../notebooks/03-optimization-and-variational-methods/qaoa.ipynb)
-notebooks teach the optimization machinery. A tracking implementation would
-still need detector hits, candidate construction, the tracking-specific cost
-function, and conversion of selected segments into tracks. Evaluation should
-include tracking efficiency, false or duplicate tracks, momentum resolution,
-and total processing time. A low QUBO cost alone does not establish accurate
-reconstruction or a computational advantage.
+The [Fermilab demonstration by Li, Macridin, and Spentzouris](https://lss.fnal.gov/archive/2019/slides/fermilab-slides-19-003-qis.pdf) used VQE to study the ground and first excited energies of this three-qubit model on a simulator and Rigetti hardware. It is a proof of principle for bosonic encoding and low-energy simulation. It does not calculate a collider cross section or simulate a complete quantum field theory.
 
-## The Rabi model: encoding a physical quantum system
+The local [molecular VQE notebook](../notebooks/03-optimization-and-variational-methods/vqe-molecular-energy.ipynb) follows the same general cycle of Hamiltonian construction, qubit mapping, parameterized state preparation, energy measurement, and classical optimization. Its chemistry-specific mapping and ansatz would need to be replaced for a Rabi-model calculation.
 
-Page 173 presents a two-level system coupled to one photon mode, following
-[Li, Macridin, and Spentzouris' 2019 Fermilab demonstration](https://lss.fnal.gov/archive/2019/slides/fermilab-slides-19-003-qis.pdf).
-The photon occupation is restricted to zero through three photons, giving four
-basis states that fit in two qubits. One additional qubit represents the
-two-level system. VQE then estimates low-energy states of this truncated model;
-the cited demonstration studies the ground and first excited states.
+### Quantum classifiers for Higgs and SUSY events
 
-This example connects physical modeling to bosonic encoding, energy measurement,
-and variational optimization. Its relevance is methodological: the Rabi model
-is a small light–matter system, and it does not itself predict a collider cross
-section or constitute a full quantum-field-theory simulation. The molecular
-VQE notebook supplies the optimization pattern, but its fermionic mapping and
-chemistry ansatz would need to be replaced for a Rabi calculation.
+The course presents several HEP classification studies that should be treated separately. The quantum-kernel example uses quantum states to measure similarity between collision events before a classical support-vector machine performs the classification. [Wu et al.’s quantum-kernel study](https://arxiv.org/abs/2104.05059) applied this method to \(t\bar tH\) production. Its largest studies used quantum simulation, while its hardware experiment used 15 qubits and 100 events. The reported performance was comparable to the classical SVM and BDT baselines.
 
-A useful reproduction would compare energies and their separation with exact
-diagonalization at the same photon cutoff, then increase the cutoff to assess
-the physical truncation error. Agreement within a small truncated space must be
-distinguished from convergence to the untruncated model. Circuit noise and
-optimization error introduce further, separate approximations.
+A separate [variational-classifier study by Wu et al.](https://arxiv.org/abs/2012.11560) considered \(t\bar tH\), with \(H\rightarrow\gamma\gamma\), and \(H\rightarrow\mu^+\mu^-\). The small hardware experiments showed that the circuits could distinguish signal and background under the tested conditions, but they did not demonstrate improved discovery sensitivity or computational advantage.
 
-## Calorimeter showers and generative modeling
+The course also presents [Terashi et al., *Event Classification with Quantum Machine Learning in High-Energy Physics*](https://arxiv.org/abs/2002.09935). This study classified a Higgs-mediated chargino-pair signal against a \(WW\) background using quantum circuit learning and variational classification. The hardware test used three variables with 40 training and 40 testing events. The result demonstrates feasibility at a small scale and does not establish production readiness.
 
-Calorimeters measure energy deposited by particle showers. Simulating these
-deposits is part of predicting how a physics process appears in a detector.
-Page 210 shows a two-dimensional projection of a three-dimensional shower
-beside a generated example, credited to Su Yeon Chang and Sofia Vallecorsa.
-[CERN's account of the related QGAN work](https://quantum.cern/quantum-computing-simulation-investigating-quantum-generative-adversarial-networks-and-quantum)
-describes small generative models trained to reproduce calorimeter energy
-patterns. The aim is to learn a distribution from reference simulations and
-sample additional detector responses.
+The local [quantum-kernel](../notebooks/04-quantum-machine-learning/quantum-kernels.ipynb) and [variational-classifier](../notebooks/04-quantum-machine-learning/variational-classifier.ipynb) notebooks use instructional data rather than collision events. A HEP implementation would require a documented event sample, physically motivated features, preprocessing fitted only on the training data, held-out evaluation, and comparison with strong classical baselines.
 
-The [generative-model notebook](../notebooks/04-quantum-machine-learning/quantum-generative-model.ipynb)
-teaches adversarial training with a Qiskit generator and a PyTorch discriminator,
-using a small binomial distribution. A calorimeter model would additionally
-need an encoding of cell energies and spatial structure, with control over
-incident energy and particle type. The local notebook does not yet provide
-those ingredients.
+### Calorimeter simulation with quantum generative models
 
-Validation should compare distributions of total deposited energy, longitudinal
-and transverse shower profiles, correlations between cells, and rare tails.
-Similar-looking images or a decreasing training loss are insufficient evidence
-that a generator preserves the detector response needed for physics analysis.
-Any speed comparison should include training, state preparation, repeated
-measurements, and the cost of producing usable classical samples.
+Calorimeters measure energy deposited by particle showers. Detailed detector simulation is computationally expensive, which motivates generative models that learn the distribution of shower shapes and energy deposits.
 
-## Connecting these case studies to project results
+The course shows a reduced calorimeter example associated with the work of Su Yeon Chang and Sofia Vallecorsa. [Chang et al.’s continuous-variable qGAN study](https://arxiv.org/abs/2101.11132) tested small quantum generative models on reduced calorimeter outputs. Their later [dual-PQC model](https://arxiv.org/abs/2103.15470) studied small pixelated shower images. These experiments are prototypes and do not establish accurate detector-scale simulation or quantum speedup.
 
-The shared question is whether a quantum method improves a physically relevant
-calculation or inference under a fair comparison. Accuracy on a small simulation
-is useful evidence about an implementation; quantum advantage requires an
-explicit comparison of resources, precision, and problem size. The course's
-[HEP review](https://arxiv.org/abs/2005.08582) supplies broader context for these
-early research directions.
+The local [quantum generative model](../notebooks/04-quantum-machine-learning/quantum-generative-model.ipynb) learns a four-outcome binomial distribution. A calorimeter implementation would additionally require spatially organized cell energies, conditioning on particle type and incident energy, and validation of total energy, longitudinal and transverse profiles, inter-cell correlations, and rare distribution tails.
 
-Any future local result should identify its dataset or Hamiltonian, observable,
-classical reference, and execution record in [results/](../results/README.md).
-The accompanying interpretation should explain which physical conclusion the
-result supports and which approximations limit it. Personal observations belong
-in [reflections.md](reflections.md), with links to the experiment that motivated
-them.
+## Phenomenological applications from external research
 
-[Project home](../README.md) · [Course map](course-map.md) · [References](../REFERENCES.md)
+### Quantum parton showers
+
+Particles produced in high-energy collisions radiate other particles, creating a parton shower before hadronization and detector interaction. Ordinary event generators use classical probabilistic methods that do not retain every quantum interference effect.
+
+[Bauer, de Jong, Nachman, and Provasoli](https://arxiv.org/abs/1904.03196) developed a quantum algorithm for final-state radiation and demonstrated it for a simplified quantum field theory. The method represents multiple shower histories coherently and includes interference between intermediate states. It provides a possible path toward quantum-assisted event generation, but the demonstrated model is much simpler than realistic QCD and does not yet produce complete LHC events.
+
+### Proton parton distributions
+
+Predictions for proton collisions depend on parton distribution functions, which describe how the proton’s momentum is distributed among quarks and gluons. A typical hadronic cross section contains a convolution of the form
+
+```math
+\sigma_{pp\rightarrow X}
+=
+\sum_{i,j}
+\int dx_1\,dx_2\,
+f_i(x_1,Q^2)
+f_j(x_2,Q^2)
+\hat{\sigma}_{ij\rightarrow X}.
+```
+
+The functions \(f_i\) and \(f_j\) describe the proton structure, while \(\hat{\sigma}_{ij\rightarrow X}\) is the partonic cross section. [Pérez-Salinas et al., *Determining the proton content with a quantum computer*](https://arxiv.org/abs/2011.13934), developed variational quantum circuits for representing these distributions. They tested small circuits on quantum hardware and performed a global fit through classical simulation of quantum circuits.
+
+This is a direct phenomenological application because changes in the fitted distributions affect predictions for observable collider processes. The current evidence establishes that quantum circuits can represent such functions at small scale; it does not show that they improve the precision or computational cost of modern global PDF analyses.
+
+### Real-time lattice gauge dynamics
+
+Nonperturbative and real-time field dynamics are difficult for many classical numerical methods. Quantum simulation offers a way to represent the state and evolution of a field theory directly in a controlled quantum system.
+
+[Martinez et al., *Real-time dynamics of lattice gauge theories with a few-qubit quantum computer*](https://arxiv.org/abs/1605.04570), simulated particle-antiparticle production in the \(1+1\)-dimensional Schwinger model using trapped ions. The experiment studied vacuum decay, pair production, and entanglement dynamics. It was an important demonstration of real-time lattice-gauge simulation, but the Schwinger model is an Abelian theory in one spatial dimension and should not be presented as a simulation of realistic QCD.
+
+### Collider effective field theories
+
+A complete quantum simulation of all energy scales in a collider process would require resources far beyond present hardware. Effective field theories provide a more focused approach by separating perturbative high-energy calculations from lower-energy dynamics that may contain difficult quantum interference.
+
+[Bauer, Freytsis, and Nachman](https://arxiv.org/abs/2102.05044) calculated simplified Wilson-line transition observables using simulations and the IBMQ Manhattan processor. These quantities are related to the low-energy structures that appear in collider factorization. The example used a scalar field theory and therefore represents an early building block rather than a full Standard Model prediction.
+
+### Collective neutrino oscillations
+
+Dense systems of neutrinos can undergo collective flavour oscillations produced by many-body interactions. These dynamics are relevant to environments such as supernovae and can become difficult to calculate as the number of interacting neutrinos increases.
+
+[Yeter-Aydeniz et al., *Collective Neutrino Oscillations on a Quantum Computer*](https://arxiv.org/abs/2104.03273), used quantum Lanczos and Trotterized evolution on IBM hardware to estimate energy levels and transition probabilities. The results agreed with exact references after simplifying the small systems under study. The experiment demonstrates a possible computational path, while realistic astrophysical neutrino ensembles remain far beyond the demonstrated scale.
+
+## Interpretation and repository status
+
+The phenomenological value of a quantum method depends on whether it improves a physical prediction or analysis under a fair comparison. Event classifiers should be evaluated through ROC curves, efficiencies, expected yields, and statistical sensitivity. Detector models should reproduce physically important distributions and correlations. Quantum simulations should quantify truncation, discretization, noise, and state-preparation errors. Every study should also include the cost of classical preprocessing, circuit execution, repeated measurements, and output reconstruction.
+
+The H₂ VQE notebook is an implemented scientific application. The MaxCut, QAOA, quantum-kernel, variational-classifier, and generative-model notebooks demonstrate methods that could be adapted to HEP. The Higgs, SUSY, tracking, Rabi, calorimeter, parton-shower, proton-PDF, lattice-field, effective-field-theory, and neutrino examples remain literature-based case studies in this repository.
+
+[Project home](../README.md) · [Course map](course-map.md) · [Course overview](overview.md) · [References](../REFERENCES.md)
 
 [course-slides]: https://indico.cern.ch/event/970909/attachments/2165159/3654057/PIQC%20Lecture%207.pdf
