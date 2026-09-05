@@ -11,16 +11,13 @@
 # notebook, `import sys; print(sys.executable)` shows the interpreter in use.
 # Start with notebooks/01-foundations-and-information/hello-quantum-world.ipynb.
 #
-# Qiskit defines circuits and states. Samplers return measurement samples;
-# estimators evaluate observables. Aer provides local simulation. Qiskit
+# Qiskit defines circuits and states.
+# Aer provides local simulation. Qiskit
 # Algorithms, Nature, and Machine Learning support the later examples.
-# PySCF supplies the electronic-structure calculation used by molecular VQE;
-# scikit-learn provides datasets and preprocessing, and PyTorch trains the QGAN.
 #
 # https://quantum.cloud.ibm.com/docs/en/guides/install-qiskit
 # https://qiskit-community.github.io/qiskit-nature/apidocs/qiskit_nature.second_q.drivers.pyscfd.html
 
-# JupyterLab opens the notebooks; pylatexenc supports circuit drawings.
 jupyterlab==4.6.3
 pylatexenc==2.11
 qiskit==2.5.2
@@ -28,7 +25,7 @@ qiskit-aer==0.17.2
 numpy==2.5.2
 matplotlib==3.11.1
 
-# Algorithms and molecular electronic structure.
+# Algorithms 
 qiskit-algorithms==0.4.0
 qiskit-nature==0.8.0
 pyscf==2.14.0
@@ -40,10 +37,10 @@ scikit-learn==1.9.0
 torch==2.13.0
 
 # These libraries are also used by local examples and backend snapshots.
-# Installing them does not require a provider account. Keep RUN_IBM_HARDWARE
-# and RUN_DWAVE_HARDWARE False for local work. Configure credentials locally
-# with the provider only when deliberately using hardware; never store them in
-# this file or a notebook.
+# Installing them does not require a provider account.
+# Keep RUN_IBM_HARDWARE and RUN_DWAVE_HARDWARE False for local work.
+# Configure credentials locally with the provider only when deliberately using hardware;
+# never store them in this file or a notebook.
 qiskit-ibm-runtime==0.49.0
 dimod==0.12.22
 dwave-system==1.35.0
