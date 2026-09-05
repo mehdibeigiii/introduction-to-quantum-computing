@@ -7,8 +7,7 @@
 # python -m pip check
 # python -m jupyterlab
 #
-# Select the notebook kernel belonging to the same Python environment. In a
-# notebook, `import sys; print(sys.executable)` shows the interpreter in use.
+# Select the notebook kernel belonging to the same Python environment.
 # Start with notebooks/01-foundations-and-information/hello-quantum-world.ipynb.
 #
 # Qiskit defines circuits and states.
