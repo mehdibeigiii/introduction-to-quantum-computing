@@ -49,8 +49,7 @@ The local [quantum-kernel](../notebooks/04-quantum-machine-learning/quantum-kern
 ## Calorimeter simulation with quantum generative models
 
 A calorimeter records the energy deposited by particle showers. Detailed detector simulation is computationally expensive, so generative models are studied as faster approximations.
-
-Page 210 presents early QGAN work by Su Yeon Chang and Sofia Vallecorsa. The related [continuous-variable QGAN study](https://arxiv.org/abs/2101.11132) trains reduced models of calorimeter output. The [dual-parameterized-circuit model](https://arxiv.org/abs/2103.15470) uses two quantum generators to reproduce simplified pixelated shower images and their probabilities.
+The [dual-parameterized-circuit model](https://arxiv.org/abs/2103.15470) uses two quantum generators to reproduce simplified pixelated shower images and their probabilities.
 
 The local [quantum-generative-model notebook](../notebooks/04-quantum-machine-learning/quantum-generative-model.ipynb) demonstrates adversarial training with a small binomial distribution. It explains the method but is not a calorimeter simulator. A complete application would need detector geometry, cell energies, particle conditions, shower profiles, correlations, and comparisons with reference simulation.
 
