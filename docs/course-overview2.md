@@ -8,23 +8,23 @@ This progression is conceptual rather than strictly historical. Each stage depen
 
 A classical bit has one of two definite values, whereas a qubit can exist in a superposition of the computational basis states. A pure single-qubit state is written as
 
-$$
+```math
 \lvert\psi\rangle
 =
 \alpha\lvert0\rangle+\beta\lvert1\rangle,
 \qquad
 \lvert\alpha\rvert^2+\lvert\beta\rvert^2=1.
-$$
+```
 
 The complex amplitudes $\alpha$ and $\beta$ contain the information that determines measurement probabilities. Measuring in the computational basis produces zero with probability $P(0)=\lvert\alpha\rvert^2$ and one with probability $P(1)=\lvert\beta\rvert^2$. Quantum gates transform the state through unitary matrices $U$ satisfying $U^\dagger U=I$, which preserves the total probability while changing amplitudes and phases.
 
 Multiple qubits are combined using tensor products. An $n$-qubit state belongs to a space with dimension $2^n$, allowing the system to represent amplitudes for every $n$-bit basis state simultaneously. Some composite states cannot be separated into independent states of their individual qubits. The Bell state
 
-$$
+```math
 \lvert\Phi^+\rangle
 =
 \frac{\lvert00\rangle+\lvert11\rangle}{\sqrt{2}}
-$$
+```
 
 is an example of entanglement: measurement outcomes are correlated even though neither qubit possesses a separate pure state that completely describes it. Entanglement, measurement disturbance, and the no-cloning principle distinguish quantum information from ordinary classical data.
 
@@ -42,13 +42,13 @@ Quantum algorithms use interference to reinforce amplitudes associated with usef
 
 Deutsch–Jozsa introduces this pattern by distinguishing two promised classes of functions through a structured quantum evaluation. Grover’s algorithm applies amplitude amplification to unstructured search. If one item is marked among $N$ possibilities, its success probability after $r$ Grover iterations is
 
-$$
+```math
 P_r
 =
 \sin^2\bigl((2r+1)\theta\bigr),
 \qquad
 \sin\theta=\frac{1}{\sqrt{N}}.
-$$
+```
 
 The probability initially rises toward one and then decreases if the circuit continues rotating past the marked state. Choosing approximately $O(\sqrt{N})$ iterations gives a quadratic improvement over the $O(N)$ queries required by an ordinary unstructured classical search.
 
@@ -60,7 +60,7 @@ These examples show that a quantum computer does not accelerate every calculatio
 
 Many computational problems can be expressed as the search for a low-energy configuration. A quadratic unconstrained binary optimization problem has the form
 
-$$
+```math
 C(x)
 =
 \sum_i a_i x_i
@@ -68,7 +68,7 @@ C(x)
 \sum_{i<j}b_{ij}x_i x_j,
 \qquad
 x_i\in\{0,1\}.
-$$
+```
 
 The coefficients describe the value of selecting individual variables and the rewards or penalties associated with selecting pairs. After mapping binary variables to spin variables, the same problem can be represented by an Ising Hamiltonian. MaxCut is a useful example because the quality of a graph partition can be encoded directly as an energy.
 
@@ -76,11 +76,11 @@ Quantum annealing searches for low-energy configurations through the physical ev
 
 VQE applies the same hybrid structure to physical Hamiltonians. A parameterized state $\lvert\psi(\theta)\rangle$ is prepared, and the measured objective is
 
-$$
+```math
 E(\theta)
 =
 \langle\psi(\theta)\rvert H\lvert\psi(\theta)\rangle.
-$$
+```
 
 Minimizing this expectation value approximates the ground-state energy of $H$. This provides a direct connection between quantum circuits and molecular or materials calculations, although the quality of the result depends on the Hamiltonian representation, ansatz, optimizer, measurement precision, and hardware noise.
 
@@ -88,33 +88,33 @@ Minimizing this expectation value approximates the ground-state energy of $H$. T
 
 Quantum machine learning applies quantum state preparation and parameterized circuits to data. A feature map encodes a classical input $x$ into a quantum state,
 
-$$
+```math
 \lvert\phi(x)\rangle
 =
 U_\phi(x)\lvert0\rangle^{\otimes n}.
-$$
+```
 
 A quantum kernel measures the similarity between two encoded inputs through their state overlap,
 
-$$
+```math
 K(x,x')
 =
 \left\lvert
 \langle\phi(x)\mid\phi(x')\rangle
 \right\rvert^2.
-$$
+```
 
 The resulting kernel matrix can be used by a classical method such as a support-vector machine. The quantum circuit supplies the similarity measure, while the classical algorithm performs the final optimization.
 
 A variational quantum classifier adds a trainable circuit $W(\theta)$ after data encoding. A measured expectation value can define its prediction:
 
-$$
+```math
 \hat{y}_\theta(x)
 =
 \langle\phi(x)\rvert
 W^\dagger(\theta)ZW(\theta)
 \lvert\phi(x)\rangle.
-$$
+```
 
 A classical optimizer changes $\theta$ to reduce a loss calculated from the predictions and known labels. Quantum generative models use parameterized states differently: the measurement probability $p_\theta(z)=\lvert\langle z\mid\psi(\theta)\rangle\rvert^2$ defines a distribution from which the trained model can generate samples.
 
