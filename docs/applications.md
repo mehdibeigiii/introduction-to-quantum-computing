@@ -97,15 +97,15 @@ Parton showers describe the radiation emitted by energetic particles before hadr
 
 Predictions for proton collisions depend on parton distribution functions, which describe the momentum distributions of quarks and gluons inside the proton. They enter hadronic cross sections schematically through a convolution,
 
-$$
-\sigma_{pp\rightarrow X}
+```math
+\sigma_{pp \rightarrow X}
 =
 \sum_{a,b}
 \int dx_1\,dx_2\,
 f_a(x_1,\mu)\,
 f_b(x_2,\mu)\,
-\hat{\sigma}_{ab\rightarrow X}.
-$$
+\hat{\sigma}_{ab \rightarrow X}.
+```
 
 [Pérez-Salinas and collaborators](https://arxiv.org/abs/2011.13934) studied variational quantum circuits as representations of these functions. They deployed small qPDF models on quantum devices and performed a broader global fit using quantum-circuit simulation on classical hardware. This work connects variational circuits directly to phenomenological predictions, but it does not show that present hardware can replace modern classical PDF fitting.
 
