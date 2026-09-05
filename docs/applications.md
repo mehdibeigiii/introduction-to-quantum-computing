@@ -24,19 +24,6 @@ The study demonstrated that a small HEP classification problem could be expresse
 
 Charged particles leave hits as they pass through detector layers. Track reconstruction determines which hits belong to the same particle. When many collisions occur together, the number of possible hit combinations makes this a difficult optimization problem.
 
-The lecture present a method studied by [Bapst and collaborators](https://link.springer.com/article/10.1007/s41781-019-0032-5). Candidate triplets of hits are represented by binary variables, and their quality and compatibility are included in a quadratic cost function.
-
-```math
-C(T)
-=
-\sum_{i=1}^{n}a_iT_i
-+
-\sum_{i=1}^{n}\sum_{j=i+1}^{n}b_{ij}T_iT_j,
-\qquad T_i\in\{0,1\}.
-```
-
-The linear terms describe the quality of individual triplets, while the quadratic terms reward compatible candidates or penalize conflicting ones. The resulting QUBO can be converted into an Ising model.
-
 The lecture presents quantum annealing as the tested method and QAOA as planned gate-based work. The local [MaxCut](../notebooks/03-optimization-and-variational-methods/maxcut.ipynb) and [QAOA](../notebooks/03-optimization-and-variational-methods/qaoa.ipynb) notebooks explain the required optimization methods, but they do not contain detector data or a complete tracking implementation.
 
 ## Physical simulation with VQE
