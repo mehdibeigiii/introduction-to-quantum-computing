@@ -26,8 +26,7 @@ The [CHSH experiment](../notebooks/01-foundations-and-information/chsh.ipynb) ob
 
 The [BB84 simulation](../notebooks/01-foundations-and-information/bb84.ipynb) retains 61 bits from 100 prepared bits after Alice and Bob compare their bases. A single run does not have to retain exactly half of the bits. The result demonstrates basis matching and key sifting, but it does not test eavesdropper detection or prove security.
 
-In the executed [superdense-coding experiment](../notebooks/01-foundations-and-information/teleportation-superdense-coding.ipynb), Alice sends `10` and Bob recovers `10`. The teleportation section has no saved execution result, so no teleportation result is claimed here.
-
+In the executed [superdense-coding experiment](../notebooks/01-foundations-and-information/teleportation-superdense-coding.ipynb), Alice sends `10` and Bob recovers `10`. 
 ## Quantum algorithms
 
 | Algorithm | Saved result | Interpretation |
