@@ -36,7 +36,6 @@
 | Updating the molecular-energy implementation | The [Qiskit Nature documentation](https://qiskit-community.github.io/qiskit-nature/), [`PySCFDriver`](https://qiskit-community.github.io/qiskit-nature/stubs/qiskit_nature.second_q.drivers.PySCFDriver.html), and [`GroundStateEigensolver`](https://qiskit-community.github.io/qiskit-nature/stubs/qiskit_nature.second_q.algorithms.GroundStateEigensolver.html) |
 | Updating quantum kernels, VQC, QNN, and QGAN code | The [Qiskit Machine Learning 0.9.1 documentation](https://qiskit-community.github.io/qiskit-machine-learning/), [QML algorithms API](https://qiskit-community.github.io/qiskit-machine-learning/apidocs/qiskit_machine_learning.algorithms.html), [QML primitives API](https://qiskit-community.github.io/qiskit-machine-learning/apidocs/qiskit_machine_learning.primitives.html), and [migration guide](https://qiskit-community.github.io/qiskit-machine-learning/migration/02_migration_guide_0.8.html) |
 
-The hardware sections follow IBM’s guidance for [saving account credentials](https://quantum.cloud.ibm.com/docs/en/guides/save-credentials).
 
 ## Supporting explanations
 
