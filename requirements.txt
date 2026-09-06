@@ -31,4 +31,5 @@ torch==2.13.0
 # RUN_IBM_Hardware and RUN_DWave_Hardware
 qiskit-ibm-runtime==0.49.0
 dwave-ocean-sdk==9.4.0
-dwave setup
+# To fix Dwave specific error , run:
+# dwave setup
