@@ -1,23 +1,15 @@
 # Quantum error correction
 
-Quantum error correction protects encoded information by measuring an error
-syndrome rather than directly measuring the logical state. It builds on
-entanglement, controlled gates, basis changes, and the no-cloning principle.
-Encoding distributes information across several physical qubits; it does not
-make independent copies of an unknown state.
+Quantum information is fragile because interactions with the environment and imperfect operations introduce errors. Directly copying an unknown state is forbidden, so quantum error correction encodes one logical qubit across several physical qubits and detects errors through indirect syndrome measurements.
 
-The course develops bit-flip and phase-flip repetition codes, Shor's nine-qubit
-code, stabilizer measurements, and an introduction to surface codes and fault
-tolerance. This material is essential to the course's conclusion about reliable
-quantum computing.
+## Conceptual interpretation
 
-No modernized error-correction notebook was supplied. This section currently
-provides the conceptual entry point to [lecture 7](https://indico.cern.ch/event/970909/)
-and its linked demonstrations. A small repetition-code notebook is planned as a
-later original contribution, with encoding, an injected error, syndrome detection,
-and state recovery. It is not part of this initial skeleton.
+A three-qubit repetition code protects against one bit flip by encoding the logical basis states across three qubits. Parity checks reveal which physical qubit changed without measuring the amplitudes of the logical state itself. Phase-flip protection uses the same idea in the Hadamard basis, where phase errors become detectable as bit errors.
 
-Full derivations and exercises will follow the implementation. The role of
-stabilizers also connects to the next group's efficiently simulable circuits.
+Shor’s nine-qubit code combines bit-flip and phase-flip protection. This introduces the broader stabilizer description, in which commuting operators define the valid code space and their measured signs form an error syndrome. Surface codes extend this local-check principle to a two-dimensional lattice and provide a route toward fault-tolerant computation.
 
-[Project home](../../README.md) · [Next: simulation and advantage](../06-simulation-and-quantum-advantage/README.md) · [References](../../REFERENCES.md)
+Error correction therefore connects physical noise to reliable algorithms. A useful code must suppress logical errors faster than the additional qubits and gates introduce new faults. This requirement leads to fault-tolerance thresholds, repeated syndrome extraction, and the large physical-qubit overhead expected for reliable logical qubits.
+
+## Implementation status
+
+No modernized error-correction notebook is currently included, so this folder has no computational result or visualization to present. The material is conceptual rather than experimentally verified in this repository. Stabilizer mathematics reappears from a different direction in [stabilizer simulation](../06-simulation-and-quantum-advantage/stabilizer-simulation.ipynb), where a restricted circuit family can be simulated efficiently on a classical computer.

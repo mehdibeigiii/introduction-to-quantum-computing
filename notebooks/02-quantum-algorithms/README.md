@@ -1,27 +1,27 @@
 # Quantum algorithms
 
-Quantum algorithms must turn amplitudes into useful measurement outcomes.
-Reversible oracles, phase kickback, and interference connect the examples here.
-The prerequisites are the state, gate, measurement, and composite-system ideas
-introduced in [foundations](../01-foundations-and-information/README.md).
+Quantum algorithms use interference to increase the probability of useful answers and suppress unwanted ones. Reversible oracles encode a problem without directly revealing its solution, while phase kickback, amplitude amplification, and the quantum Fourier transform turn hidden structure into measurable information.
 
-[Deutsch–Jozsa](deutsch-jozsa.ipynb) builds constant and balanced oracles
-explicitly. [Grover](grover.ipynb) constructs the diffusion operation and examines
-success probability as the iteration count changes.
-[Oracle-search examples](oracle-search-examples.ipynb) adds the modernized
-algorithm-library and Boolean-expression examples from CERN notebook 8.
-[Shor order finding](shor-order-finding.ipynb) connects controlled modular
-multiplication and the inverse quantum Fourier transform to classical factor
-recovery.
+[Deutsch–Jozsa](deutsch-jozsa.ipynb) distinguishes constant and balanced functions. [Grover’s algorithm](grover.ipynb) amplifies a marked state through repeated oracle and diffusion operations. [Oracle-search examples](oracle-search-examples.ipynb) implements Boolean-expression oracles with current Qiskit components. [Shor order finding](shor-order-finding.ipynb) combines modular arithmetic, phase estimation, and classical post-processing to factor a small integer.
 
-The theoretical thread includes universality, the cost of oracle queries, and
-the limitations of quantum parallelism. Fourier transforms and phase estimation
-also motivate quantum counting and HHL; these have course references but no
-separate implementation here. The Shor example uses dense matrices and is
-intended for small instances, so it cannot demonstrate scalable factorization.
+## Conceptual interpretation
 
-Later derivations and exercises should explain why the measured distributions
-have their expected form. Saved plots remain examples until their execution and
-interpretation are documented under [reproducibility](../../docs/reproducibility.md).
+In the ideal Deutsch–Jozsa experiment, the constant oracle produces `0000`, while the balanced oracle produces a nonzero result. The algorithm succeeds because interference combines information about every oracle evaluation into a global property of the function.
 
-[Project home](../../README.md) · [Next: optimization](../03-optimization-and-variational-methods/README.md) · [References](../../REFERENCES.md)
+Grover’s algorithm behaves like a rotation toward the marked state. The probability rises toward one and then falls again when too many iterations are applied, so more iterations do not always improve the answer.
+
+![Grover success probability](../../results/02-quantum-algorithms/grover-success-by-iteration.png)
+
+*The repeated peaks show amplitude amplification followed by over-rotation away from the marked state.*
+
+The Shor example factors `N = 15` with base `a = 2`. Its measurements concentrate around four phase values, from which the classical post-processing recovers order `r = 4` and factors 3 and 5.
+
+![Shor order-finding measurements](../../results/02-quantum-algorithms/shor-order-finding-measurements.png)
+
+*The four populated outcomes reflect the periodic structure associated with order four.*
+
+These examples show different uses of interference: Deutsch–Jozsa detects a global promise, Grover amplifies a solution, and Shor extracts a period. Quantum counting and HHL belong to the same broader progression, but they do not have separate modernized notebooks in this repository.
+
+## Implementation status
+
+The notebooks contain executed simulator examples using the current Qiskit API. Shor’s implementation uses small dense operators and demonstrates the logic only for toy values; it does not establish scalable factorization. The saved experiments verify expected behavior under their chosen conditions and do not demonstrate quantum advantage. The modernization approach is explained in [About the notebooks](../README.md).
