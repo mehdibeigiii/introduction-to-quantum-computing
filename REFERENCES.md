@@ -1,21 +1,21 @@
 # References and acknowledgments
 
 
-[CERN Indico course page](https://indico.cern.ch/event/970903/) contains the seven lectures, original notebooks, slides, exercises, recordings, and supporting resources. 
+[CERN Indico course page](https://indico.cern.ch/event/970903/)
 
-[final cumulative lecture deck](https://indico.cern.ch/event/970909/attachments/2165159/3654057/PIQC%20Lecture%207.pdf) contains the complete progression of the course.
+[final lecture's PDF](https://indico.cern.ch/event/970909/attachments/2165159/3654057/PIQC%20Lecture%207.pdf)
 
 ## Course recordings
 
-| Lecture | Main subjects | YouTube recording |
-| --- | --- | --- |
-| 1 | Introduction, qubits, circuits, hardware, and IBM Quantum | [Watch lecture 1](https://www.youtube.com/watch?v=jwHM8AHOtJ0) |
-| 2 | BB84, two-qubit gates, entanglement, and the CHSH game | [Watch lecture 2](https://www.youtube.com/watch?v=SPQ-rvtaREs) |
-| 3 | Quantum teleportation, superdense coding, and Deutsch’s algorithm | [Watch lecture 3](https://www.youtube.com/watch?v=wX_vmpbQGU4) |
-| 4 | Multiqubit systems, Deutsch–Jozsa, Grover, Shor, and HHL | [Watch lecture 4](https://www.youtube.com/watch?v=a7L2m2qlEIw) |
-| 5 | Quantum annealing, Ising optimization, MaxCut, and QAOA | [Watch lecture 5](https://www.youtube.com/watch?v=LFewKe_tWME) |
-| 6 | VQE, quantum kernels, variational classifiers, and QGANs | [Watch lecture 6](https://www.youtube.com/watch?v=I6xnxUSubD0) |
-| 7 | Quantum error correction, quantum advantage, simulation, and future directions | [Watch lecture 7](https://www.youtube.com/watch?v=vy7oF70FCxQ) |
+| Lecture | YouTube recording |
+| --- | --- |
+| 1 | [lecture 1](https://www.youtube.com/watch?v=jwHM8AHOtJ0) |
+| 2 | [lecture 2](https://www.youtube.com/watch?v=SPQ-rvtaREs) |
+| 3 | [lecture 3](https://www.youtube.com/watch?v=wX_vmpbQGU4) |
+| 4 | [lecture 4](https://www.youtube.com/watch?v=a7L2m2qlEIw) |
+| 5 | [lecture 5](https://www.youtube.com/watch?v=LFewKe_tWME) |
+| 6 | [lecture 6](https://www.youtube.com/watch?v=I6xnxUSubD0) |
+| 7 | [lecture 7](https://www.youtube.com/watch?v=vy7oF70FCxQ) |
 
 ## Documentation used to modernize the notebooks
 
