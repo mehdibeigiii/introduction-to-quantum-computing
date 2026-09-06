@@ -7,15 +7,13 @@
 
 ## Course recordings
 
-| Lecture | YouTube recording |
-| --- | --- |
-| 1 | [lecture 1](https://www.youtube.com/watch?v=jwHM8AHOtJ0) |
-| 2 | [lecture 2](https://www.youtube.com/watch?v=SPQ-rvtaREs) |
-| 3 | [lecture 3](https://www.youtube.com/watch?v=wX_vmpbQGU4) |
-| 4 | [lecture 4](https://www.youtube.com/watch?v=a7L2m2qlEIw) |
-| 5 | [lecture 5](https://www.youtube.com/watch?v=LFewKe_tWME) |
-| 6 | [lecture 6](https://www.youtube.com/watch?v=I6xnxUSubD0) |
-| 7 | [lecture 7](https://www.youtube.com/watch?v=vy7oF70FCxQ) |
+[lecture 1](https://www.youtube.com/watch?v=jwHM8AHOtJ0) |
+[lecture 2](https://www.youtube.com/watch?v=SPQ-rvtaREs) |
+[lecture 3](https://www.youtube.com/watch?v=wX_vmpbQGU4) |
+[lecture 4](https://www.youtube.com/watch?v=a7L2m2qlEIw) |
+[lecture 5](https://www.youtube.com/watch?v=LFewKe_tWME) |
+[lecture 6](https://www.youtube.com/watch?v=I6xnxUSubD0) |
+[lecture 7](https://www.youtube.com/watch?v=vy7oF70FCxQ) |
 
 ## Documentation used to modernize the notebooks
 
