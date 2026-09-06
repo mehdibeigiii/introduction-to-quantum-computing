@@ -12,4 +12,4 @@ environment, parameters, and interpretation. Record seeds, shots, and execution
 method when relevant, and distinguish local simulation from hardware execution.
 Create experiment directories only when there is an actual result to store.
 
-[Reproducibility](../docs/reproducibility.md) · [Project home](../README.md)
+[Project home](../README.md)
