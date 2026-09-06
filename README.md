@@ -25,7 +25,7 @@ before running these commands from the repository root, and select that same
 environment as the notebook kernel:
 
 ```bash
-python -m pip install -r requirements.txt
+python -m pip install -r requirements.txt         # For linux systems, python -> python3
 python -m jupyterlab
 ```
 
