@@ -30,9 +30,7 @@ python -m jupyterlab
 ```
 
 The examples provide local simulation paths. IBM and D-Wave hardware extensions
-are optional and disabled by default in the canonical notebooks. Read the
-[reproducibility notes](docs/reproducibility.md) before interpreting saved outputs
-or running larger experiments.
+are optional and disabled by default in the canonical notebooks.
 
 ## Follow the concepts
 
