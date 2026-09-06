@@ -8,14 +8,13 @@ qubit circuit to optimization, quantum machine learning, and the limits of
 classical simulation.
 
 The modernized notebooks are the canonical implementations. The original CERN
-materials provide the educational reference; the
-[course map](docs/course-map.md) records their correspondence. Explanations and
-interpretations are written in connected prose, with equations and code where
+materials provide the educational reference; Explanations and
+interpretations are written with equations and code where
 they help explain the experiment.
 
 ## Read and run
 
-Start with the [course overview](docs/course-overview.md), then follow the concept
+Start with the [overview](docs/overview.md), then follow the concept
 groups below. Each group introduces its subject and links directly to its
 notebooks. The first experiment is
 [Hello, quantum world!](notebooks/01-foundations-and-information/hello-quantum-world.ipynb).
