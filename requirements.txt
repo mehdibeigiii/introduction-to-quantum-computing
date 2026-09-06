@@ -7,12 +7,6 @@
 # python -m pip check
 # python -m jupyterlab
 #
-# Select the notebook kernel belonging to the same Python environment.
-#
-# Qiskit defines circuits and states.
-# Aer provides local simulation. Qiskit
-# Algorithms, Nature, and Machine Learning support the later examples.
-#
 # https://quantum.cloud.ibm.com/docs/en/guides/install-qiskit
 # https://qiskit-community.github.io/qiskit-nature/apidocs/qiskit_nature.second_q.drivers.pyscfd.html
 
