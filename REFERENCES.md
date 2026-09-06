@@ -54,8 +54,6 @@ The hardware sections follow IBM’s guidance for [saving account credentials](h
 
 [*Quantum Machine Learning in High Energy Physics*](https://arxiv.org/abs/2005.08582)
 
-[*Solving a Higgs Optimization Problem with Quantum Annealing for Machine Learning*](https://www.nature.com/articles/nature24047)
-
 [*Event Classification with Quantum Machine Learning in High-Energy Physics*](https://arxiv.org/abs/2002.09935)
 
 [*Application of Quantum Machine Learning Using the Quantum Variational Classifier Method to High Energy Physics Analysis at the LHC*](https://arxiv.org/abs/2012.11560)
