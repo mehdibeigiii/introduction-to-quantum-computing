@@ -17,7 +17,3 @@ Random-circuit sampling studies a different regime. Each random circuit creates 
 The general shape follows the theoretical reference, although the small four-qubit experiment also contains visible finite-size structure. This result explains the statistical idea behind random-circuit sampling, but it does not reproduce a large hardware experiment or establish quantum advantage.
 
 The contrast between the two notebooks is the main lesson. A large stabilizer circuit can be classically manageable because of its restricted algebraic structure, while less structured random circuits can become difficult even when their purpose is only to sample outputs.
-
-## Implementation status
-
-Both notebooks contain saved local results using current Qiskit simulators. Boson sampling, large random-circuit experiments, classical verification methods, and hardware roadmaps remain conceptual material. Their place in the wider progression is described in the [course overview](../../docs/overview.md).

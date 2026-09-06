@@ -25,7 +25,3 @@ The generator and discriminator losses fluctuate around their adversarial balanc
 ![QGAN relative entropy](../../results/04-quantum-machine-learning/qgan-relative-entropy.png)
 
 *The downward trend shows measurable learning, while the nonzero final value and the flat generated histogram show that the target distribution has not been reproduced completely.*
-
-## Implementation status
-
-All three notebooks use current Qiskit Machine Learning components and contain saved local outputs. The replacement generative notebook also records its Qiskit, Qiskit Machine Learning, and PyTorch versions. Its small distribution, local simulation, and partial fit make it a demonstration of hybrid adversarial training rather than evidence of quantum advantage. The high-energy-physics uses of classification and generative modelling are discussed in [applications](../../docs/applications.md), and the modernization approach is explained in [About the notebooks](../README.md).

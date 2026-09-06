@@ -21,7 +21,3 @@ The Shor example factors `N = 15` with base `a = 2`. Its measurements concentrat
 *The four populated outcomes reflect the periodic structure associated with order four.*
 
 These examples show different uses of interference: Deutsch–Jozsa detects a global promise, Grover amplifies a solution, and Shor extracts a period. Quantum counting and HHL belong to the same broader progression, but they do not have separate modernized notebooks in this repository.
-
-## Implementation status
-
-The notebooks contain executed simulator examples using the current Qiskit API. Shor’s implementation uses small dense operators and demonstrates the logic only for toy values; it does not establish scalable factorization. The saved experiments verify expected behavior under their chosen conditions and do not demonstrate quantum advantage. The modernization approach is explained in [About the notebooks](../README.md).
