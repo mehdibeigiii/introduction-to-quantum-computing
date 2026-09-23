@@ -14,11 +14,6 @@ they help explain the experiment.
 
 ## Read and run
 
-Start with the [overview](docs/overview.md), then follow the concept
-groups below. Each group introduces its subject and links directly to its
-notebooks. The first experiment is
-[Hello, quantum world!](notebooks/01-foundations-and-information/hello-quantum-world.ipynb).
-
 From the repository root, run these commands. Setup creates `.venv`, installs
 the account-free notebook dependencies, and registers its Jupyter kernel; no
 manual environment creation or activation is needed:
