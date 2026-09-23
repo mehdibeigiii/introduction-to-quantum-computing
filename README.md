@@ -19,18 +19,18 @@ groups below. Each group introduces its subject and links directly to its
 notebooks. The first experiment is
 [Hello, quantum world!](notebooks/01-foundations-and-information/hello-quantum-world.ipynb).
 
-Installation instructions, package purposes, and dependency versions are combined
-in [requirements.txt](requirements.txt). Activate a compatible Python environment
-before running these commands from the repository root, and select that same
-environment as the notebook kernel:
+From the repository root, run these commands. Setup creates `.venv`, installs
+the account-free notebook dependencies, and registers its Jupyter kernel; no
+manual environment creation or activation is needed:
 
 ```bash
-python -m pip install -r requirements.txt         # For linux systems, python -> python3
-python -m jupyterlab
+bash scripts/setup.sh
+.venv/bin/python -m jupyterlab
 ```
 
-The examples provide local simulation paths. IBM and D-Wave hardware extensions
-are optional and disabled by default in the canonical notebooks.
+See [setup details](docs/setup.md) for supported platforms, optional D-Wave
+hardware packages, and troubleshooting. IBM and D-Wave hardware calls are
+disabled by default in the canonical notebooks.
 
 ## Follow the concepts
 
@@ -53,7 +53,9 @@ student's own synthesis and interpretation.
 ```text
 README.md              Project introduction and navigation
 REFERENCES.md          Course, research, and software references
-requirements.txt       Combined setup instructions and dependencies
+scripts/setup.sh       One-command local environment setup
+requirements.txt       Pinned default notebook dependencies
+requirements-dwave.txt Optional D-Wave hardware dependency
 docs/                  Overview, course map, reproducibility, applications, reflections
 notebooks/             Six concept groups and their canonical implementations
 results/               Selected reproducible experimental outputs

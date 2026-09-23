@@ -1,0 +1,2 @@
+# Optional remote D-Wave hardware support; use bash scripts/setup.sh --with-dwave.
+dwave-system==1.35.0
