@@ -1,6 +1,6 @@
 # A Practical Introduction to Quantum Computing
 
-This university project follows CERN's [A Practical Introduction to Quantum
+This repo follows CERN's [A Practical Introduction to Quantum
 Computing: From Qubits to Quantum Machine Learning and Beyond](https://indico.cern.ch/event/970903/),
 taught by Elías F. Combarro in November and December 2020. It connects physical
 ideas and mathematical reasoning with computational examples, from the first
