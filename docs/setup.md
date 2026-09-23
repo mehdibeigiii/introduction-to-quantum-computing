@@ -10,15 +10,6 @@ bash scripts/setup.sh
 .venv/bin/python -m jupyterlab
 ```
 
-The script creates `.venv` if needed, installs all default account-free
-notebook requirements there, runs `pip check`, and registers **Python
-(Introduction to Quantum Computing)** as a kernel under `.venv`. Select that
-kernel in JupyterLab. Run the same setup command again to refresh or validate
-an existing environment. Python's [venv documentation](https://docs.python.org/3.13/library/venv.html)
-explains why directly invoking `.venv/bin/python` requires no activation;
-[IPython's kernel guide](https://ipython.readthedocs.io/en/latest/install/kernel_install.html)
-describes environment-local kernel registration.
-
 For optional D-Wave hardware packages, run:
 
 ```bash
